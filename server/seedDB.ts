@@ -9,8 +9,8 @@ import { z } from 'zod';
 
 import 'dotenv/config';
 
-const INVENTORY_DATABASE = 'inventory_database';
-const ITEMS_COLLECTION = 'items';
+export const INVENTORY_DATABASE = 'inventory_database';
+export const ITEMS_COLLECTION = 'items';
 
 const client = new MongoClient(process.env.MONGODB_ATLAS_URI as string);
 
@@ -169,6 +169,7 @@ async function seedDatabase(): Promise<void> {
         {
           collection,
           indexName: 'vector_index',
+          textKey: 'embedding_text',
           embeddingKey: 'embedding',
         },
       );
