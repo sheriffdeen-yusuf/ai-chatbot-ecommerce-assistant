@@ -8,6 +8,11 @@ const ChatWidget = () => {
   const [threadId, setThreadId] = useState(null);
   const messagesEndRef = useRef(null);
 
+  const baseURL =
+    process.env.NODE_ENV === 'production'
+      ? 'https://ai-chatbot-ecommerce-assistant.onrender.com'
+      : 'http://localhost:8000';
+
   useEffect(() => {
     if (isOpen && messages.length === 0) {
       const initialMessages = [
@@ -46,9 +51,7 @@ const ChatWidget = () => {
     setMessages((prevMessages) => [...prevMessages, message]);
     setInputValue('');
 
-    const endpoint = threadId
-      ? `http://localhost:8000/chat/${threadId}`
-      : 'http://localhost:8000/chat';
+    const endpoint = threadId ? `${baseURL}/chat/${threadId}` : `${baseURL}/chat`;
 
     try {
       const response = await fetch(endpoint, {
