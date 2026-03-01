@@ -5,7 +5,9 @@
   "main": "index.js",
   "scripts": {
     "dev": "npx ts-node index.ts",
-    "seed": "npx ts-node seedDB.ts"
+    "seed": "npx ts-node seedDB.ts",
+    "build": "npx tsc",
+    "start": "node dist/index.js"
   },
   "keywords": [
     "AI",
