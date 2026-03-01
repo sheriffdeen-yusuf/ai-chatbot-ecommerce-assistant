@@ -1,9 +1,11 @@
+import React from 'react';
 import './App.css';
+import EcommerceStore from './components/EcommerceStore';
 
 function App() {
   return (
     <div className="App">
-      <h1>AI Chat Bot</h1>
+      <EcommerceStore />
     </div>
   );
 }
