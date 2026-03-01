@@ -4,7 +4,7 @@ import { FaRobot, FaPaperPlane, FaTimes, FaCommentDots } from 'react-icons/fa';
 const ChatWidget = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [messages, setMessages] = useState([]);
-  const [inputValue, setInputValue] = useState('');
+  const [inputValue, setInputValue] = useState('Do you have any dining tables?');
   const [threadId, setThreadId] = useState(null);
   const messagesEndRef = useRef(null);
 
@@ -32,7 +32,7 @@ const ChatWidget = () => {
     setInputValue(e.target.value);
   };
 
-  console.log(messages);
+  console.log('Messages =>', messages);
 
   const handleSendMessage = async (e) => {
     e.preventDefault();
