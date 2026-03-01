@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "dev": "npx ts-node index.ts",
-    "seed": "npx ts-node seed-db.ts"
+    "seed": "npx ts-node seedDB.ts"
   },
   "keywords": [
     "AI",
@@ -15,6 +15,7 @@
   "author": "Lekenz",
   "license": "MIT ",
   "dependencies": {
+    "@google/generative-ai": "^0.24.1",
     "@langchain/core": "^0.3.59",
     "@langchain/google-genai": "^0.2.12",
     "@langchain/langgraph": "^0.3.4",
